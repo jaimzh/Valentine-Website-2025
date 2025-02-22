@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Fleur+De+Leah&family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Sour Gummy", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgb(255, 214, 214) 0%,
+    rgb(255, 164, 216) 100%
+  );
+}
+
+/* Background pattern (placed behind everything) */
+.background-pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  opacity: 1;
+  background-image: radial-gradient(#ffbce8 1.1px, transparent 1.1px),
+    radial-gradient(#ff66ca 1.1px, transparent 1.1px);
+  background-size: 44px 44px;
+  background-position: 0 0, 22px 22px;
+
+  z-index: -2; /* Ensures it stays in the background */
+}
+
+/* Floating hearts container */
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1; /* Hearts float over background but under content */
+}
+
+/* Container for all content */
+.container {
+    /* background-color: blue; */
+    height: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 1; /* Main content stays above background & hearts */
+}
+
+/* Valentine's Day greeting */
+.valentine-text {
+  font-weight: bold;
+  border-radius: 20px;
+  color: rgba(255, 23, 162, 0.663);
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: "Great Vibes", sans-serif;
+  padding: 1rem;
+  margin-bottom: 30px;
+}
+
+.valentine-text h2 {
+  font-size: 50px;
+}
+
+.valentine-text p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.783);
+  font-family: "Sour Gummy", sans-serif;
+}
+/* App icon grid */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 80px);
+  gap: 100px;
+  justify-content: center;
+}
+
+/* App icons (with glassmorphism effect) */
+.app-icon {
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 251, 255, 0.542); /* Light transparent background */
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+img {
+  margin-top: 5px;
+  padding: 20px;
+  width: 120px;
+  opacity: 80%;
+}
+
+.app-icon span {
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* Hover effect for icons */
+.app-icon:hover {
+  transform: scale(1.1);
+}
+
+.app-icon:active {
+    transform: scale(1.1);
+  }
+
+
+
+/* Floating Hearts Container */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* allows clicks to pass through */
+  z-index: 0; /* behind main content */
+}
+
+/* Floating Heart Styles */
+.heart {
+  position: absolute;
+  top: -10%; /* starts above the viewport */
+  animation: float 10s linear infinite;
+}
+
+/* Keyframes for Floating Animation (max opacity 50%) */
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Variation for each heart using nth-child selectors */
+.floating-hearts .heart:nth-child(1) {
+  left: 10%;
+  animation-duration: 12s;
+  transform: scale(0.7);
+  animation-delay: 0s;
+}
+
+.floating-hearts .heart:nth-child(2) {
+  left: 30%;
+  animation-duration: 14s;
+  transform: scale(1);
+  animation-delay: 2s;
+}
+
+.floating-hearts .heart:nth-child(3) {
+  left: 50%;
+  animation-duration: 10s;
+  transform: scale(0.8);
+  animation-delay: 1s;
+}
+
+.floating-hearts .heart:nth-child(4) {
+  left: 70%;
+  animation-duration: 16s;
+  transform: scale(1.2);
+  animation-delay: 3s;
+}
+
+.floating-hearts .heart:nth-child(5) {
+  left: 85%;
+  animation-duration: 11s;
+  transform: scale(1.6);
+  animation-delay: 4s;
+}
+
+/* --- Mobile Responsiveness --- */
+/* Adjust the scale values and positions for smaller screens */
+@media screen and (max-width: 600px) {
+  .floating-hearts .heart:nth-child(1) {
+    left: 10%;
+    transform: scale(0.5);
+  }
+  .floating-hearts .heart:nth-child(2) {
+    left: 30%;
+    transform: scale(0.7);
+  }
+  .floating-hearts .heart:nth-child(3) {
+    left: 50%;
+    transform: scale(0.6);
+  }
+  .floating-hearts .heart:nth-child(4) {
+    left: 70%;
+    transform: scale(0.8);
+  }
+  .floating-hearts .heart:nth-child(5) {
+    left: 85%;
+    transform: scale(0.4);
+  }
+  /* If you have more hearts, adjust their scale and positions as needed */
+}
+
+/* Other existing CSS (for your background-pattern, container, etc.) would follow... */
+
+.back-button {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10; /* Ensures it stays above the content */
+  display: inline-block;
+ background-color: none;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+}
+
+.back-button img {
+  display: block;
+  width: 69px; 
+  opacity: 60%;/* Adjust size as needed */
+}
+

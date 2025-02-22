@@ -1,0 +1,50 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine Lock Screen</title>
+    <link rel="stylesheet" href="css/lock_screen.css">
+</head>
+<body>
+    <!-- Lock Screen -->
+    <img src="assets/images/background.png" class="bg-image" alt="Background">
+    <div class="gradient-overlay"></div>
+    <div class="lock-screen">
+        <div class="time-container">
+            <h1 id="time">12:00</h1>
+            <p id="date">Monday, February 14</p>
+        </div>
+        <div class="swipe-up-hint">
+            <p>Swipe Up</p>
+        </div>
+    </div>
+
+    <!-- PIN Screen -->
+    <div class="pin-screen">
+        <div class="pin-header">Enter Love Code</div>
+        <div class="pin-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+        <p class="pin-hint">❤️ Your special day code ❤️</p>
+        <div class="pin-keypad">
+            <button class="pin-btn" data-value="1">1</button>
+            <button class="pin-btn" data-value="2">2</button>
+            <button class="pin-btn" data-value="3">3</button>
+            <button class="pin-btn" data-value="4">4</button>
+            <button class="pin-btn" data-value="5">5</button>
+            <button class="pin-btn" data-value="6">6</button>
+            <button class="pin-btn" data-value="7">7</button>
+            <button class="pin-btn" data-value="8">8</button>
+            <button class="pin-btn" data-value="9">9</button>
+            <button class="pin-btn" data-value="0">0</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
