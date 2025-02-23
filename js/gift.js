@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         "I don't get paid enough for this but i did it anyway cause you're worth it 🙂‍↕️",
         "Screenshot and show me this whenever you want icecream🍦",
         "You're the best thing that's ever happened to me! 💕",
+        "Do you want something from Glovo?🍔",
+        "You're so close to get a new phone, keep it up!(That's a joke, please don't keep it up) 📱",
     
     ];
 
